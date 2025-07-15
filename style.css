@@ -265,3 +265,97 @@ img[alt="instagram-hover"] {
   font: var(--COPY-MOB);
   color: var(--COPY-CLR);
 }
+
+/* || Desktop */
+@media screen and (min-width: 992px) {
+  /* || HEADER */
+  .ping-header {
+    margin-bottom: 5.875rem;
+  }
+
+  .ping-header__ping-logo {
+    margin-bottom: 2.5rem;
+  }
+
+  .ping-header__ping-logo img {
+    max-width: 90px;
+  }
+
+  .ping-header__title {
+    font: var(--TITLE-DSK);
+    margin-bottom: 1rem;
+  }
+
+  .ping-header__cta {
+    font: var(--CTA-DSK);
+    margin-bottom: 2.5rem;
+  }
+
+  /* HEADER-FORM */
+  .ping-header__subscribe-form {
+    flex-flow: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .input-wrapper {
+    width: 412px;
+    align-items: flex-start;
+    gap: 0.375rem;
+  }
+
+  input[type="email"] {
+    font: var(--INPUT-DSK);
+    padding: 1.125rem 0rem 1.125rem 1.875rem;
+  }
+
+  input[type="email"]::placeholder {
+    color: var(--PLACEHOLDER-CLR);
+  }
+
+  .message {
+    font: var(--MESSAGE-DSK);
+    letter-spacing: var(--MESSAGE-LS-DSK);
+    margin-left: 1.875rem;
+  }
+
+  .submit-button {
+    font: var(--BUTTON-DSK);
+    line-height: 3.5rem;
+    padding: 0rem 3.9375rem;
+  }
+
+  .submit-button:hover {
+    background-color: hsla(223, 87%, 63%, 0.8);
+  }
+
+  .submit-button:hover:disabled {
+    background-color: var(--BUTTON-DISABLED-BG);
+  }
+
+  .ping-main__hero {
+    margin-bottom: 4.5rem;
+    width: 640px;
+  }
+
+  .ping-footer {
+    gap: 1.5625rem;
+  }
+
+  .ping-footer__social:hover {
+    background-color: var(--SOCIAL-ICON-HVR-BG);
+    border: none;
+  }
+
+  .ping-footer__social:hover .default-image {
+    display: none;
+  }
+
+  .ping-footer__social:hover .hover-image {
+    display: block;
+  }
+
+  .ping-footer__copyright {
+    font: var(--COPY-DSK);
+  }
+}
