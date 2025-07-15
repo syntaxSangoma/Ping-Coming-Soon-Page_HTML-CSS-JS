@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --BODY-BG: #fff;
+  --TITLE-CLR: #969696;
+  --TITLE-CLR-SPAN: #15202a;
+  --CTA-CLR: #15202a;
+  --INPUT-CLR: #15202a;
+  --PLACEHOLDER-CLR: #b8c7ed;
+  --INPUT-BORDER-CLR: #c2d3ff;
+  --BUTTON-DEFAULT-CLR: #fff;
+  --BUTTON-DEFAULT-BG: #4c7bf3;
+  --SOCIAL-ICON-HVR-BG: #4c7bf3;
+  --SOCIAL-ICON-BORDER-CLR: hsla(223, 87%, 63%, 0.15);
+  --COPY-CLR: #969696;
+
+  /* COLORS-STATES */
+  --ERROR-MESSAGE: #ff5263;
+  --SUCCESS-MESSAGE: #008000;
+  --BUTTON-DISABLED-BG: #8c8c8c;
+
+  /* SHADOWS */
+  --BUTTON-SHADOW: 0px 5px 10px 2px hsla(223, 87%, 63%, 0.2304);
+  --BUTTON-SHADOW-DISABLED: 0px 5px 10px 2px hsla(0, 0%, 55%, 0.2304);
+
+  /* TYPOGRAPHY */
+  --FF: "Libre Franklin", sans-serif;
+
+  /* TYPOGRAPHY-SHARED */
+  --TITLE-SPAN-SHARED: bold;
+
+  /* TYPOGRAPHY-MOB */
+  --TITLE-MOB: 300 1.375rem/2rem var(--FF);
+  --CTA-MOB: 300 0.75rem var(--FF);
+  --INPUT-MOB: 300 0.75rem/1.25rem var(--FF);
+  --MESSAGE-MOB: italic 0.625rem/1.25rem var(--FF);
+  --MESSAGE-LS-MOB: 0.0081rem;
+  --BUTTON-MOB: 500 0.75rem/1rem var(--FF);
+  --COPY-MOB: 300 0.625rem var(--FF);
+
+  /* TYPOGRAPHY-DSK */
+  --TITLE-DSK: 300 3rem/3.75rem var(--FF);
+  --CTA-DSK: 300 1.25rem var(--FF);
+  --INPUT-DSK: 300 1rem/1.25rem var(--FF);
+  --MESSAGE-DSK: italic 0.75rem/1.25rem var(--FF);
+  --MESSAGE-LS-DSK: 0.0094rem;
+  --BUTTON-DSK: 500 1rem var(--FF);
+  --COPY-DSK: 300 0.75rem var(--FF);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-image {
+  display: none;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--BODY-BG);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 5.0625rem 1.6875rem 2.3125rem 1.75rem;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* || HEADER */
+.ping-header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 4.5rem;
+}
+
+.ping-header__ping-logo {
+  margin-bottom: 2rem;
+}
+
+.ping-header__ping-logo img {
+  max-width: 56px;
+}
+
+.ping-header__title {
+  font: var(--TITLE-MOB);
+  color: var(--TITLE-CLR);
+  margin-bottom: 0.9375rem;
+}
+
+.ping-header__title span {
+  font-weight: var(--TITLE-SPAN-SHARED);
+  color: var(--TITLE-CLR-SPAN);
+}
+
+.ping-header__cta {
+  font: var(--CTA-MOB);
+  color: var(--CTA-CLR);
+  margin-bottom: 2rem;
+}
+
+/* HEADER-FORM */
+.ping-header__subscribe-form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.input-wrapper {
+  width: 282px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  gap: 0.125rem;
+}
+
+input[type="email"] {
+  width: 100%;
+  font: var(--INPUT-MOB);
+  color: var(--INPUT-CLR);
+  padding: 0.625rem 0rem 0.625rem 2rem;
+  border: 1px solid var(--INPUT-BORDER-CLR);
+  border-radius: 28px;
+}
+
+input[type="email"]::placeholder {
+  color: var(--PLACEHOLDER-CLR);
+}
+
+input[type="email"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="email"].valid {
+  border-color: var(--INPUT-BORDER-CLR);
+  caret-color: var(--BUTTON-DEFAULT-BG);
+}
+
+input[type="email"].invalid {
+  border-color: var(--ERROR-MESSAGE);
+  caret-color: var(--ERROR-MESSAGE);
+  color: var(--ERROR-MESSAGE);
+}
+
+.message {
+  font: var(--MESSAGE-MOB);
+  letter-spacing: var(--MESSAGE-LS-MOB);
+  display: none;
+}
+
+.error-message {
+  color: var(--ERROR-MESSAGE);
+}
+
+.success-message {
+  color: var(--SUCCESS-MESSAGE);
+}
+
+.submit-button {
+  background-color: var(--BUTTON-DEFAULT-BG);
+  color: var(--BUTTON-DEFAULT-CLR);
+  font: var(--BUTTON-MOB);
+  line-height: 2.5rem;
+  padding: 0rem 7.0313rem;
+  border-radius: 28px;
+  border: none;
+  box-shadow: var(--BUTTON-SHADOW);
+}
+
+.submit-button:disabled {
+  background-color: var(--BUTTON-DISABLED-BG);
+}
+
+.ping-main__hero {
+  margin-bottom: 7.5rem;
+  width: 320px;
+}
+
+.ping-main__hero img {
+  width: 100%;
+}
+
+.ping-footer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.6875rem;
+}
+
+.ping-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ping-footer__social {
+  width: 32px;
+  height: 31px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: 0.92px solid var(--SOCIAL-ICON-BORDER-CLR);
+  background-color: transparent;
+}
+
+img[alt="facebook-default"],
+img[alt="facebook-hover"] {
+  max-width: 8px;
+}
+
+img[alt="twitter-default"],
+img[alt="twitter-hover"] {
+  max-width: 20px;
+}
+
+img[alt="instagram-default"],
+img[alt="instagram-hover"] {
+  max-width: 15px;
+}
+
+.ping-footer__copyright {
+  font: var(--COPY-MOB);
+  color: var(--COPY-CLR);
+}
