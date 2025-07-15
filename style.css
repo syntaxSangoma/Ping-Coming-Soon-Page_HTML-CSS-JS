@@ -162,6 +162,8 @@ input[type="email"] {
   padding: 0.625rem 0rem 0.625rem 2rem;
   border: 1px solid var(--INPUT-BORDER-CLR);
   border-radius: 28px;
+  background-color: white;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 input[type="email"]::placeholder {
