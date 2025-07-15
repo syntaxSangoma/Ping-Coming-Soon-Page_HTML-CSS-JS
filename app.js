@@ -13,7 +13,7 @@ if (form && input && submitButton && message) {
     submitButton.disabled = true;
 
     form.style.gap = window.matchMedia("(min-width: 992px)").matches
-      ? "0px"
+      ? "16px"
       : "20px";
   }
 
@@ -26,7 +26,7 @@ if (form && input && submitButton && message) {
     submitButton.disabled = false;
 
     form.style.gap = window.matchMedia("(min-width: 992px)").matches
-      ? "0px"
+      ? "16px"
       : "20px";
   }
 
@@ -39,7 +39,7 @@ if (form && input && submitButton && message) {
     input.value = "";
 
     form.style.gap = window.matchMedia("(min-width: 992px)").matches
-      ? "0px"
+      ? "16px"
       : "10px";
   }
 
