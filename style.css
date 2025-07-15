@@ -147,6 +147,7 @@ h1 {
 }
 
 .input-wrapper {
+  position: relative;
   width: 282px;
   display: flex;
   align-items: center;
@@ -175,11 +176,42 @@ input[type="email"]:focus {
 input[type="email"].valid {
   border-color: var(--INPUT-BORDER-CLR);
   caret-color: var(--BUTTON-DEFAULT-BG);
+  color: var(--INPUT-CLR);
 }
 
 input[type="email"].invalid {
   border-color: var(--ERROR-MESSAGE);
   caret-color: var(--ERROR-MESSAGE);
+  color: var(--ERROR-MESSAGE);
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 32px;
+  top: 10px;
+  color: var(--PLACEHOLDER-CLR);
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: white;
+  display: none;
+  padding: 0 4px;
+  font: var(--INPUT-MOB);
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label {
+  top: -9px;
+  left: 28px;
+  font-size: 10px;
+  color: var(--INPUT-CLR);
+  display: block;
+}
+
+.input-wrapper input.valid + label {
+  color: var(--SUCCESS-MESSAGE);
+}
+
+.input-wrapper input.invalid + label {
   color: var(--ERROR-MESSAGE);
 }
 
@@ -311,6 +343,19 @@ img[alt="instagram-hover"] {
 
   input[type="email"]::placeholder {
     color: var(--PLACEHOLDER-CLR);
+  }
+
+  .input-wrapper label {
+    left: 30px;
+    top: 18px;
+    padding: 0 8px;
+    font: var(--INPUT-DSK);
+  }
+
+  .input-wrapper input:focus + label,
+  .input-wrapper input:not(:placeholder-shown) + label {
+    left: 22px;
+    font-size: 14px;
   }
 
   .message {
