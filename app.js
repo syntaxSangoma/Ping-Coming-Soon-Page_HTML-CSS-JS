@@ -9,7 +9,6 @@ if (form && input && submitButton && message) {
     message.textContent = msg;
     message.style.display = "block";
     message.classList.add("error-message");
-    message.classList.remove("success-message");
     submitButton.disabled = true;
 
     form.style.gap = window.matchMedia("(min-width: 992px)").matches
@@ -22,7 +21,6 @@ if (form && input && submitButton && message) {
     message.textContent = msg;
     message.style.display = "block";
     message.classList.add("success-message");
-    message.classList.remove("error-message");
     submitButton.disabled = false;
 
     form.style.gap = window.matchMedia("(min-width: 992px)").matches
@@ -49,7 +47,7 @@ if (form && input && submitButton && message) {
     const isValueValid = input.validity.valid;
 
     input.classList.remove("valid", "invalid");
-    input.classList.remove("error-message", "success-message");
+    message.classList.remove("error-message", "success-message");
 
     if (isEmpty) {
       setError("Empty field");

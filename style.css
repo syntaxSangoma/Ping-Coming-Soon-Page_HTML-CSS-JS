@@ -211,6 +211,7 @@ input[type="email"].invalid {
 .submit-button:disabled {
   background-color: var(--BUTTON-DISABLED-BG);
   box-shadow: var(--BUTTON-SHADOW-DISABLED);
+  cursor: not-allowed;
 }
 
 .ping-main__hero {
